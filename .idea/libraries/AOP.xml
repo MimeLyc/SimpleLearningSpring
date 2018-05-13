@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="AOP">
+    <CLASSES>
+      <root url="file://D:/Download/spring-framework-5.0.5.RELEASE-dist/AOP" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/Download/spring-framework-5.0.5.RELEASE-dist/AOP" />
+    </SOURCES>
+    <jarDirectory url="file://D:/Download/spring-framework-5.0.5.RELEASE-dist/AOP" recursive="false" />
+    <jarDirectory url="file://D:/Download/spring-framework-5.0.5.RELEASE-dist/AOP" recursive="false" type="SOURCES" />
+  </library>
+</component>
