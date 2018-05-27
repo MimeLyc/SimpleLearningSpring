@@ -1,6 +1,8 @@
 package com.controller;
 
-import com.model.User;
+import com.po.User;
+import com.service.LoginService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,7 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
  */
 //@Controller 注释表明这个类作为MVC架构中的Controller（需要在servlet.xml注册扫描）
 @Controller
+//@RequestMapping(value = "/BlogWeb")
 public class LoginController {
+
+	@Autowired
+	private LoginService loginService;
 
 //	RequestMapping注释用于映射URL到整个类或一个特定的处理方法，即当请求为value的值时映射到此方法/类，若类指定了该属性，则该类的value属性作为该类方法的父目录
 //	具体见https://blog.csdn.net/J080624/article/details/55193269
@@ -34,8 +40,10 @@ public class LoginController {
  */
 	@RequestMapping(value = "/comfirmUser",method = RequestMethod.GET)
 	public String login(@ModelAttribute("inputUser")User user, @ModelAttribute("myUser") ModelMap model){
-		if (user.getName().equals("lyc")&&user.getPassword().equals("111")){
-			model.addAttribute("name","李煜超");
+		User tempUser = loginService.confirmLogin(user.getId());
+		System.out.println(user.getId()+"---get---");
+		if (user.getPassword().equals(tempUser.getPassword())){
+			model.addAttribute("name",tempUser.getName());
 			model.addAttribute("password",user.getPassword());
 			return "mainPage";
 		}else{

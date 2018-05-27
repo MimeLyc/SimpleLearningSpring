@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--加载属性文件
+    文件中的 标签会先读取properties元素体内的property标签属性，再加载resource或url中定义的
+    元素，最后加载parameterType定义的属性
+    所以建议不要在properties标签中添加任何属性，而是定义在专门的properties文件中
+    且properties文件中的命名有一定特殊性，如xxxx.xxxx-->
+    <!--<properties resource="db.properties"></properties>-->
+
+    <!--&lt;!&ndash;类型的别名&ndash;&gt;-->
+    <typeAliases>
+        <!--&lt;!&ndash;针对单个别名的定义-->
+        <!--type:类型的路径-->
+        <!--alias:别名-->
+        <!--&ndash;&gt;-->
+        <!--<typeAlias type="com.mybatis.po.User" alias="user"></typeAlias>-->
+        <!--&lt;!&ndash;批量生成别名-->
+        <!--package包名-->
+        <!--扫描这个包，自动生成别名=类名&ndash;&gt;-->
+        <package name="com.po"></package>
+
+    </typeAliases>
+
+
+    <!--<mappers>-->
+        <!--&lt;!&ndash;也可以通过mapper接口映射文件,如下，前提是Mapper.xml与接口命名要一样且在同一个目录下&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapper class="com.mybatis.mapper.UserMapper"></mapper>&ndash;&gt;-->
+        <!--&lt;!&ndash;也可以批量加载&ndash;&gt;-->
+        <!--&lt;!&ndash;<package name=""></package>&ndash;&gt;-->
+        <!--&lt;!&ndash;<map></map>&ndash;&gt;-->
+        <!--<mapper resource="sqlmap/User.xml"/>-->
+        <!--<mapper resource="mapper/UserMapper.xml"/>-->
+    <!--</mappers>-->
+    <!-- 配置mapper
+        由于使用spring和mybatis的整合包进行mapper扫描，这里不需要配置了。
+        必须遵循：mapper.xml和mapper.java文件同名且在一个目录
+         -->
+
+    <!-- 加载映射文件-->
+    <!--<mappers>-->
+        <!--<mapper resource="com/mapper/UserMapper.xml"/>-->
+    <!--</mappers>-->
+    <!--无关
+        hibernate，orm框架，入门门槛较高，自动生成sql语句，较重，无法自行优化数据库语句，适应追求稳定的企业级应用或者变化不多的中小型项目
+        mybatis较轻，不完全的orm框架，可以进行优化，，适合互联网项目
+
+        -->
+</configuration>

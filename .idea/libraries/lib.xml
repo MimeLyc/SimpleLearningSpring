@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/ant-1.9.6.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/ant-launcher-1.9.6.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/asm-5.2.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/cglib-3.2.5.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/javassist-3.22.0-GA.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/log4j-api-2.3.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/log4j-core-2.3.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/ognl-3.1.16.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib/slf4j-log4j12-1.7.25.jar!/" />
+      <root url="jar://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/mybatis-3.4.6.jar!/" />
+      <root url="file://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/Download/spring-framework-5.0.5.RELEASE-dist/mybatis-3.4.6/lib" recursive="false" />
+  </library>
+</component>

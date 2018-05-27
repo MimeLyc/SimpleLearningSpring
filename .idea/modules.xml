@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$//SimpleLearingSpring.iml" filepath="$PROJECT_DIR$//SimpleLearingSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleLearingSpring.iml" filepath="$PROJECT_DIR$/SimpleLearingSpring.iml" />
     </modules>
   </component>
 </project>

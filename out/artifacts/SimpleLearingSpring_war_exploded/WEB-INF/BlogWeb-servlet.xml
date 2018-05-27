@@ -11,15 +11,51 @@
  http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-    <context:component-scan base-package="com.model" />
+    <context:component-scan base-package="com.po" />
     <context:component-scan base-package="com.controller" />
+    <!--<context:component-scan base-package="com.service" />-->
+    <!--<mvc:annotation-driven></mvc:annotation-driven>-->
+
+    <!-- 加载配置文件 -->
+    <!--<context:property-placeholder location="classpath:db.properties" />-->
     <!--<bean name = "/student" class = "com.tutorialspoint.Student" />-->
+
+    <!-- 处理器映射器
+        将bean的name作为url进行查找，需要在配置Handler时指定beanname(就是url)
+    -->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <mvc:resources mapping="/pages/**" location="/WEB-INF/pages/" />
+    <!-- mapper配置
+    MapperFactoryBean：根据mapper接口生成代理对象
+        这里需要对每个mapper进行扫描
+    -->
+
+    <!--<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--&lt;!&ndash;//mapperInterface指定mapper接口&ndash;&gt;-->
+        <!--<property name="mapperInterface" value="com.mapper.UserMapper"/>-->
+        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+    <!--</bean>-->
+
+    <!-- mapper批量扫描，从mapper包中扫描出mapper接口，自动创建代理对象并且在spring容器中注册
+    遵循规范：将mapper.java和mapper.xml映射文件名称保持一致，且在一个目录 中
+    自动扫描出来的mapper的bean的id为mapper类名（首字母小写）
+    -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 指定扫描的包名
+        如果扫描多个包，每个包中间使用半角逗号分隔
+        -->
+        <property name="basePackage" value="classpath:com.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+
+    </bean>
+
+    <mvc:resources mapping="/pages/**" location="/WEB-INF/pages" />
     <mvc:annotation-driven/>
 </beans>
